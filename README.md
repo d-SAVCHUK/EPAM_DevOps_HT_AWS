@@ -51,15 +51,15 @@ Connect to your instance:
 - Once connected, run the command sudo lsblk to check if the EBS volume is attached and to determine its device name.
 
 Create a file on the EBS volume:
-- Run the command sudo mkfs -t ext4 /dev/xvdf (replace /dev/xvdf with the device name of your EBS volume) to create a file system on the EBS volume.
+- Run the command sudo mkfs -t ext4 /dev/xvdf to create a file system on the EBS volume.
 - Run the command sudo mkdir /data to create a directory for the file(s) on the EBS volume.
 - Run the command sudo mount /dev/xvdf /data to mount the EBS volume to the directory you just created.
-- Create a file on the EBS volume by running the command sudo touch /data/myfile.txt (replace myfile.txt with the name of your file).
-- Add some content to the file by running the command sudo echo "Hello World" > /data/myfile.txt.
+- Create a file on the EBS volume by running the command sudo touch /data/epam_test.txt 
+- Add some content to the file by running the command sudo echo "EPAM DevOps Course" > /data/epam_test.txt.
 
 Verify the file on the EBS volume:
 - Run the command sudo ls /data to list the file(s) in the directory.
-- Run the command sudo cat /data/myfile.txt to view the content of the file.
+- Run the command sudo cat /data/epam_test.txt to view the content of the file.
 
 ![screen]()
 
@@ -189,7 +189,7 @@ aws s3 sync /path/to/local/directory s3://epam-bucket
 ```
 - Verify that the files were uploaded to S3 by navigating to the S3 service in the AWS Management Console and selecting your bucket. You should see the files listed in the bucket's management console.
 
-1[screen]()
+![screen]()
 
 ## 10. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls) Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
 

@@ -98,17 +98,19 @@ To launch a new instance from a backup snapshot, you can follow these steps:
 
 ![screen]()
 
-## 6. Review the 10-minute example. Explore the possibilities of creating your own domain and domain name for your site. Note, that Route 53 not free service. Alternatively you can free register the domain name *.PP.UA and use it.
+## 6. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/get-a-domain/?nc1=h_ls). Explore the possibilities of creating your own domain and domain name for your site. Note, that Route 53 not free service. Alternatively you can free register the domain name *.PP.UA and use it.
 
-## 7. Launch and configure a WordPress instance with Amazon Lightsail link.
+...
 
-## 8. Review the 10-minute Store and Retrieve a File. Repeat, creating your own repository.
+## 7. Launch and configure a WordPress instance with Amazon Lightsail link (https://aws.amazon.com/getting-started/hands-on/launch-a-wordpress-website/?trk=gs_card).
 
-## 9. Review the 10-minute example Batch upload files to the cloud to Amazon S3 using the AWS CLI. Create a user AWS IAM, configure CLI AWS and upload any files to S3.
+## 8. Review the 10-minute Store and Retrieve a File (https://aws.amazon.com/getting-started/hands-on/backup-files-to-amazon-s3/). Repeat, creating your own repository.
 
-## 10. Review the 10-minute example Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
+## 9. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/backup-to-s3-cli/?nc1=h_ls) Batch upload files to the cloud to Amazon S3 using the AWS CLI. Create a user AWS IAM, configure CLI AWS and upload any files to S3.
 
-## 11. Run a Serverless "Hello, World!" with AWS Lambda.
+## 10. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls) Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
+
+## 11. Run a Serverless "Hello, World!" with AWS Lambda (https://aws.amazon.com/getting-started/hands-on/run-serverless-code/?nc1=h_ls).
 
 ## 12. Create a static website on Amazon S3, publicly available (link1 or link2 - using a custom domain
 registered with Route 53). Post on the page your own photo, the name of the educational program (EPAM Cloud&DevOps Fundamentals Autumn 2022), the list of AWS services with which the student worked within the educational program or earlier and the full list with links of completed labs (based on tutorials or qwiklabs). Provide the link to the website in your report and СV.

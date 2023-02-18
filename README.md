@@ -149,9 +149,21 @@ sudo a2ensite wordpress
 sudo systemctl restart apache2
 ```
 - Finally, log in to your WordPress site by going to your instance's public IP address in a web browser. You should see the WordPress installation page where you can create an administrator account and customize your site.
+
 My IP is: 35.180.202.38
 
+![screen]()
+
 ## 8. Review the 10-minute Store and Retrieve a File (https://aws.amazon.com/getting-started/hands-on/backup-files-to-amazon-s3/). Repeat, creating your own repository.
+
+- Go to the AWS Management Console and navigate to the S3 service.
+- Create a new bucket by clicking the "Create bucket" button and following the prompts. Choose a unique bucket name and the region where you want the bucket to be located.
+- Once the bucket is created, click on the bucket name to access the management console.
+- Click the "Upload" button and select a file to upload to the bucket. You can choose any file on your computer.
+- Follow the prompts to set the file's permissions, metadata, and storage class.
+- Once the file is uploaded, you can view it in the bucket's management console.
+
+![screen]()
 
 ## 9. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/backup-to-s3-cli/?nc1=h_ls) Batch upload files to the cloud to Amazon S3 using the AWS CLI. Create a user AWS IAM, configure CLI AWS and upload any files to S3.
 

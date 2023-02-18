@@ -191,7 +191,7 @@ aws s3 sync /Desktop/test_site_copy.html s3://epam-bucket2
 ```
 - Verify that the files were uploaded to S3 by navigating to the S3 service in the AWS Management Console and selecting your bucket. You should see the files listed in the bucket's management console.
 
-![screen9]()
+![screen9](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen10.png)
 
 ## 10. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls) Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
 
@@ -203,7 +203,7 @@ aws s3 sync /Desktop/test_site_copy.html s3://epam-bucket2
 - Enter a name for your service, and select the task definition you just created. Configure your network and security settings as desired.
 - Review your settings, and click on "Create Service". Your service will now be created, and you can monitor its status in the "Services" section of the ECS console.
 
-![screen10]()
+![screen10](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen12.png)
   
 ## 11. Run a Serverless "Hello, World!" with AWS Lambda (https://aws.amazon.com/getting-started/hands-on/run-serverless-code/?nc1=h_ls).
 
@@ -230,7 +230,7 @@ def lambda_handler(event, context):
 - Choose "Test" again to run the function.
 - After the function runs successfully, you should see the message "Execution result: succeeded".
   
-![screen11]()
+![screen11](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen13.png)
 
 ## 12. Create a static website on Amazon S3, publicly available (link1 or link2 - using a custom domain registered with Route 53). Post on the page your own photo, the name of the educational program (EPAM Cloud&DevOps Fundamentals Autumn 2022), the list of AWS services with which the student worked within the educational program or earlier and the full list with links of completed labs (based on tutorials or qwiklabs). Provide the link to the website in your report and СV.
 
@@ -252,4 +252,4 @@ def lambda_handler(event, context):
 
 Link: https://epam-bucket2.s3.eu-west-3.amazonaws.com/test_site_copy.html
 
-![screen12]()
+![screen12](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen14.png)

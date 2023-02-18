@@ -13,7 +13,7 @@ Connect to your Instance
 - In the EC2 Dashboard, select your instance and click on "Connect".
 - Follow the instructions to access your instance using the SSH client of your choice. Make sure to use the key pair you selected during instance launch to authenticate the connection.
 
-![screen1]()
+![screen1](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen1.png)
 
 ## 2. Create a snapshot of your instance to keep as a backup.
 
@@ -30,7 +30,7 @@ Verify the snapshot
 - Verify that the snapshot you just created is listed and has a status of "completed".
 You can also check the size and time of the snapshot to confirm it is the correct one.
 
-![screen2]()
+![screen2](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen2.png)
 
 ## 3. Create and attach a Disk_D (EBS) to your instance to add more storage space. Create and save some file on Disk_D.
 
@@ -50,6 +50,8 @@ Connect to your instance:
 - Connect to your instance using SSH or RDP, depending on your instance operating system.
 - Once connected, run the command sudo lsblk to check if the EBS volume is attached and to determine its device name.
 
+![screen3](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen3.png)
+
 Create a file on the EBS volume:
 - Run the command sudo mkfs -t ext4 /dev/xvdf to create a file system on the EBS volume.
 - Run the command sudo mkdir /data to create a directory for the file(s) on the EBS volume.
@@ -61,7 +63,7 @@ Verify the file on the EBS volume:
 - Run the command sudo ls /data to list the file(s) in the directory.
 - Run the command sudo cat /data/epam_test.txt to view the content of the file.
 
-![screen]()
+![screen4](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen4.png)
 
 ## 4. Launch the second instance from backup.
 
@@ -79,7 +81,7 @@ To launch a new instance from a backup snapshot, you can follow these steps:
 - Complete the remaining configuration options for your instance, including security groups, key pairs, and any user data scripts you may want to run.
 - Click "Launch Instance" to create the new instance.
 
-![screen]()
+![screen5](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen5.png)
 
 ## 5. Detach Disk_D from the 1st instance and attach disk_D to the new instance.
 
@@ -96,7 +98,7 @@ To launch a new instance from a backup snapshot, you can follow these steps:
 - Once the volume has been attached, log in to the new instance and use the lsblk command to verify that the volume is available and mounted to the correct device.
 - You should now be able to access the files you previously saved on the Disk_D volume.
 
-![screen]()
+![screen6](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen7.png)
 
 ## 6. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/get-a-domain/?nc1=h_ls). Explore the possibilities of creating your own domain and domain name for your site. Note, that Route 53 not free service. Alternatively you can free register the domain name *.PP.UA and use it.
 
@@ -152,7 +154,7 @@ sudo systemctl restart apache2
 
 My IP is: 35.180.202.38
 
-![screen]()
+![screen7](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen8.png)
 
 ## 8. Review the 10-minute Store and Retrieve a File (https://aws.amazon.com/getting-started/hands-on/backup-files-to-amazon-s3/). Repeat, creating your own repository.
 
@@ -163,7 +165,7 @@ My IP is: 35.180.202.38
 - Follow the prompts to set the file's permissions, metadata, and storage class.
 - Once the file is uploaded, you can view it in the bucket's management console.
 
-![screen]()
+![screen8](https://github.com/d-SAVCHUK/EPAM_DevOps_HT_AWS/blob/main/Screen9.png)
 
 ## 9. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/backup-to-s3-cli/?nc1=h_ls) Batch upload files to the cloud to Amazon S3 using the AWS CLI. Create a user AWS IAM, configure CLI AWS and upload any files to S3.
 
@@ -189,7 +191,7 @@ aws s3 sync /path/to/local/directory s3://epam-bucket
 ```
 - Verify that the files were uploaded to S3 by navigating to the S3 service in the AWS Management Console and selecting your bucket. You should see the files listed in the bucket's management console.
 
-![screen]()
+![screen9]()
 
 ## 10. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls) Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
 

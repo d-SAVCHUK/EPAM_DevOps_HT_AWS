@@ -167,9 +167,32 @@ My IP is: 35.180.202.38
 
 ## 9. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/backup-to-s3-cli/?nc1=h_ls) Batch upload files to the cloud to Amazon S3 using the AWS CLI. Create a user AWS IAM, configure CLI AWS and upload any files to S3.
 
+- Create an IAM user in the AWS Management Console with the necessary permissions to upload files to S3. This can be done by navigating to the IAM service, selecting "Users" in the left navigation pane, and clicking "Add user". Follow the prompts to create the user and attach the "AmazonS3FullAccess" policy to it.
+- Install the AWS CLI on your local machine
+```bash
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+```
+- Configure the AWS CLI with your IAM user's access key and secret access key by running the following command and following the prompts:
+```bash
+aws configure
+```
+- Create a bucket in the S3 service by running the following command:
+```bash
+aws s3 mb s3://epam-bucket
+```
+- Create a local directory to store the files you want to upload to S3.
+- Copy the files to the local directory.
+- Upload the files to S3 by running the following command:
+```bash
+aws s3 sync /path/to/local/directory s3://epam-bucket
+```
+- Verify that the files were uploaded to S3 by navigating to the S3 service in the AWS Management Console and selecting your bucket. You should see the files listed in the bucket's management console.
+
+1[screen]()
+
 ## 10. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls) Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
 
 ## 11. Run a Serverless "Hello, World!" with AWS Lambda (https://aws.amazon.com/getting-started/hands-on/run-serverless-code/?nc1=h_ls).
 
-## 12. Create a static website on Amazon S3, publicly available (link1 or link2 - using a custom domain
-registered with Route 53). Post on the page your own photo, the name of the educational program (EPAM Cloud&DevOps Fundamentals Autumn 2022), the list of AWS services with which the student worked within the educational program or earlier and the full list with links of completed labs (based on tutorials or qwiklabs). Provide the link to the website in your report and СV.
+## 12. Create a static website on Amazon S3, publicly available (link1 or link2 - using a custom domain registered with Route 53). Post on the page your own photo, the name of the educational program (EPAM Cloud&DevOps Fundamentals Autumn 2022), the list of AWS services with which the student worked within the educational program or earlier and the full list with links of completed labs (based on tutorials or qwiklabs). Provide the link to the website in your report and СV.

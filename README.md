@@ -83,6 +83,21 @@ To launch a new instance from a backup snapshot, you can follow these steps:
 
 ## 5. Detach Disk_D from the 1st instance and attach disk_D to the new instance.
 
+- Log in to the AWS Management Console and navigate to the EC2 dashboard.
+- Click on "Instances" in the left sidebar and select the first instance from which you want to detach the Disk_D.
+- In the "Description" tab of the instance view, scroll down to the "Block devices" section and locate the Disk_D volume.
+- Click on the "EBS ID" link for the Disk_D volume to open the EBS volume details page.
+- In the "Actions" dropdown menu, select "Detach Volume" and confirm the action.
+- Once the volume has been detached, go back to the EC2 dashboard and select the new instance to which you want to attach the Disk_D.
+- Follow steps 3 and 4 to locate the Disk_D volume, and then click "Attach Volume" in the "Actions" dropdown menu.
+- In the "Attach EBS Volume" dialog box, select the instance ID of the new instance from the "Instance" dropdown menu.
+- In the "Device" field, enter the name of the device where you want to mount the volume, such as "/dev/sdf" or "/dev/xvdf". Note that the device name must be unique for each volume attached to the instance.
+- Click "Attach" to attach the Disk_D volume to the new instance.
+- Once the volume has been attached, log in to the new instance and use the lsblk command to verify that the volume is available and mounted to the correct device.
+- You should now be able to access the files you previously saved on the Disk_D volume.
+
+![screen]()
+
 ## 6. Review the 10-minute example. Explore the possibilities of creating your own domain and domain name for your site. Note, that Route 53 not free service. Alternatively you can free register the domain name *.PP.UA and use it.
 
 ## 7. Launch and configure a WordPress instance with Amazon Lightsail link.

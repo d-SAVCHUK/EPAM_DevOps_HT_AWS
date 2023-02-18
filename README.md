@@ -32,8 +32,7 @@ You can also check the size and time of the snapshot to confirm it is the correc
 
 ![screen2]()
 
-# 3. Create and attach a Disk_D (EBS) to your instance to add more storage space. Create and save
-some file on Disk_D.
+# 3. Create and attach a Disk_D (EBS) to your instance to add more storage space. Create and save some file on Disk_D.
 
 Create an EBS volume:
 - In the EC2 dashboard, click on "Volumes" from the left-hand side menu.
@@ -62,7 +61,25 @@ Verify the file on the EBS volume:
 - Run the command sudo ls /data to list the file(s) in the directory.
 - Run the command sudo cat /data/myfile.txt to view the content of the file.
 
+![screen]()
+
 # 4. Launch the second instance from backup.
+
+To launch a new instance from a backup snapshot, you can follow these steps:
+- Navigate to the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+- Click on "Snapshots" in the left sidebar.
+- Select the snapshot you created earlier and click "Create Volume" from the "Actions" dropdown menu.
+- Configure the volume settings as desired, including the availability zone and volume type. You can leave the other settings at their default values if they are appropriate for your needs.
+- Click "Create Volume" to create the new volume from the snapshot.
+- Navigate back to the EC2 dashboard by clicking "EC2 Dashboard" in the top left corner.
+- Click "Launch Instance" to create a new instance.
+- Choose the desired Amazon Machine Image (AMI) for your instance.
+- Choose an instance type, such as t2.micro or t3.micro.
+- In the "Add Storage" section, click "Add New Volume" and select the volume you created from the backup snapshot. This will add the volume as a new disk to the instance.
+- Complete the remaining configuration options for your instance, including security groups, key pairs, and any user data scripts you may want to run.
+- Click "Launch Instance" to create the new instance.
+
+![screen]()
 
 # 5. Detach Disk_D from the 1st instance and attach disk_D to the new instance.
 

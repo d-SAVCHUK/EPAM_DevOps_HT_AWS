@@ -181,13 +181,13 @@ aws configure
 ```
 - Create a bucket in the S3 service by running the following command:
 ```bash
-aws s3 mb s3://epam-bucket
+aws s3 mb s3://epam-bucket2
 ```
 - Create a local directory to store the files you want to upload to S3.
 - Copy the files to the local directory.
 - Upload the files to S3 by running the following command:
 ```bash
-aws s3 sync /path/to/local/directory s3://epam-bucket
+aws s3 sync /Desktop/test_site_copy.html s3://epam-bucket2
 ```
 - Verify that the files were uploaded to S3 by navigating to the S3 service in the AWS Management Console and selecting your bucket. You should see the files listed in the bucket's management console.
 
@@ -195,6 +195,61 @@ aws s3 sync /path/to/local/directory s3://epam-bucket
 
 ## 10. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/deploy-docker-containers/?nc1=h_ls) Deploy Docker Containers on Amazon Elastic Container Service (Amazon ECS). Repeat, create a cluster, and run the online demo application or better other application with custom settings.
 
+- Go to the Amazon ECS console (https://console.aws.amazon.com/ecs/) and click on the "Get Started" button.
+- Create a new cluster, and give it a name.
+- Navigate to the "Task Definitions" section and create a new task definition. Enter a name and a container name for your task, and specify the Docker image to use. You can either use a public image from Docker Hub, or you can specify a custom image from your own repository.
+- Configure the task memory, CPU, and network settings as desired, and click on "Create".
+- Navigate back to the "Clusters" section and select your new cluster. Click on the "Create Service" button.
+- Enter a name for your service, and select the task definition you just created. Configure your network and security settings as desired.
+- Review your settings, and click on "Create Service". Your service will now be created, and you can monitor its status in the "Services" section of the ECS console.
+
+![screen10]()
+  
 ## 11. Run a Serverless "Hello, World!" with AWS Lambda (https://aws.amazon.com/getting-started/hands-on/run-serverless-code/?nc1=h_ls).
 
+- Sign in to the AWS Management Console.
+- Open the Lambda console.
+- Choose "Create function".
+- Select "Author from scratch".
+- Give your function a name.
+- Select a runtime for your function, for example "Python 3.8".
+- Under "Permissions", select "Use an existing role" and choose "Basic Lambda@Edge permissions".
+- Choose "Create function".
+- In the "Function code" section, replace the existing code with the following code:
+```python
+def lambda_handler(event, context):
+    return {
+        'statusCode': 200,
+        'body': 'Hello, EPAM!'
+    }
+```
+- Choose "Deploy".
+- Test the function by choosing "Test" and then "Create new test event".
+- For the test event, enter a name, for example "test-event", and leave the default JSON data.
+- Choose "Create".
+- Choose "Test" again to run the function.
+- After the function runs successfully, you should see the message "Execution result: succeeded".
+  
+![screen11]()
+
 ## 12. Create a static website on Amazon S3, publicly available (link1 or link2 - using a custom domain registered with Route 53). Post on the page your own photo, the name of the educational program (EPAM Cloud&DevOps Fundamentals Autumn 2022), the list of AWS services with which the student worked within the educational program or earlier and the full list with links of completed labs (based on tutorials or qwiklabs). Provide the link to the website in your report and СV.
+
+-Website was created as continue of S3 bucket practice with adding public permission
+```JSON
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::epam-bucket2/*"
+        }
+    ]
+}
+```
+
+Link: https://epam-bucket2.s3.eu-west-3.amazonaws.com/test_site_copy.html
+
+![screen12]()

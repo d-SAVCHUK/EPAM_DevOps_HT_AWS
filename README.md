@@ -104,6 +104,53 @@ To launch a new instance from a backup snapshot, you can follow these steps:
 
 ## 7. Launch and configure a WordPress instance with Amazon Lightsail link (https://aws.amazon.com/getting-started/hands-on/launch-a-wordpress-website/?trk=gs_card).
 
+- Go to the Amazon Lightsail homepage (https://lightsail.aws.amazon.com/) and click the "Create instance" button.
+- Select the "WordPress" blueprint or choose "Linux/Unix" as the platform and "WordPress" as the application.
+- Choose the instance location, size, and payment plan. For example, you can choose the "Monthly" payment plan and the "t3.nano" instance size.
+- Choose a unique instance name and click "Create instance".
+- Once the instance is created, click on the instance name to access the management console.
+- In the management console, click on the "Connect using SSH" button to open a terminal window.
+- In the terminal window, update the system packages by running the following command:
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+```
+- Install the WordPress package by running the following command:
+```bash
+sudo apt-get install -y wordpress
+```
+- Once the installation is complete, configure the WordPress package by running the following command:
+```bash
+sudo dpkg-reconfigure wordpress
+```
+- Follow the prompts to set the database name, database user, and database password for your WordPress installation.
+- Create a virtual host configuration file for your WordPress site by running the following command:
+```bash
+sudo nano /etc/apache2/sites-available/wordpress.conf
+```
+Add the following content to the file:
+```txt
+<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  DocumentRoot /usr/share/wordpress
+  <Directory /usr/share/wordpress>
+    Options FollowSymLinks
+    AllowOverride All
+    Require all granted
+  </Directory>
+  ErrorLog ${APACHE_LOG_DIR}/error.log
+  CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+Save the file and exit the text editor.
+
+Enable the virtual host configuration and restart the Apache server by running the following commands:
+```bash
+sudo a2ensite wordpress
+sudo systemctl restart apache2
+```
+- Finally, log in to your WordPress site by going to your instance's public IP address in a web browser. You should see the WordPress installation page where you can create an administrator account and customize your site.
+My IP is: 35.180.202.38
+
 ## 8. Review the 10-minute Store and Retrieve a File (https://aws.amazon.com/getting-started/hands-on/backup-files-to-amazon-s3/). Repeat, creating your own repository.
 
 ## 9. Review the 10-minute example (https://aws.amazon.com/getting-started/hands-on/backup-to-s3-cli/?nc1=h_ls) Batch upload files to the cloud to Amazon S3 using the AWS CLI. Create a user AWS IAM, configure CLI AWS and upload any files to S3.

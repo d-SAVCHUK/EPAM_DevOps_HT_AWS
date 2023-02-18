@@ -1,4 +1,4 @@
-## EPAM University Programs Cloud&DevOps Fundamentals Autumn 2022 AWS Cloud Basic.
+### EPAM University Programs Cloud&DevOps Fundamentals Autumn 2022 AWS Cloud Basic.
 
 # 1. Review Getting Started with Amazon EC2. Log Into Your AWS Account, Launch, Configure, Connect and Terminate Your Instance. Do not use Amazon Lightsail. It is recommended to use the t2 or t3.micro instance and the CentOS operating system.
 
